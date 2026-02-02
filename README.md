@@ -78,6 +78,3 @@ python planners/apf_planner.py
 - ✅ Performance metrics (time, path length)
 - ✅ Modular, easy-to-extend design
 
-## 📝 License
-
-MIT License - Educational use welcome.
