@@ -69,6 +69,10 @@ Thumbs.db
 *.jpg
 *.gif
 *.mp4
+images/
+
+# Portfolio generation script (local only)
+generate_portfolio_images.py
 
 # Jupyter
 .ipynb_checkpoints/
