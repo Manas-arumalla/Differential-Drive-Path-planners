@@ -1,0 +1,23 @@
+site_name: navstack
+site_description: A mobile-robot navigation and control platform
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: cyan
+    accent: cyan
+  features:
+    - navigation.sections
+    - content.code.copy
+nav:
+  - Home: index.md
+  - Planners: planners.md
+  - Simulation: simulation.md
+  - Controllers: controllers.md
+  - Balancing & RL: balancing.md
+  - Benchmarks: benchmarks.md
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
