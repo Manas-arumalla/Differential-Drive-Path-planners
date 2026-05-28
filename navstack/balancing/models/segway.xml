@@ -1,0 +1,57 @@
+<mujoco model="segway">
+  <option gravity="0 0 -9.81" timestep="0.002"/>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.9 0.9 0.9" rgb2="0.8 0.8 0.8" width="512" height="512"/>
+    <texture name="checker" type="2d" builtin="checker" rgb1="0.8 0.8 0.8" rgb2="0.95 0.95 0.95" width="512" height="512"/>
+    <material name="matplane" texture="checker" texrepeat="1 1" reflectance="0.5"/>
+    <material name="matwheel" rgba="0.1 0.1 0.1 1"/>
+  </asset>
+
+  <worldbody>
+    <!-- Ground -->
+    <geom type="plane" pos="0 0 0" size="100 100 0.1" material="matplane" condim="3" friction="1.0 0.005 0.0001"/>
+
+    <!-- Segway Chassis -->
+    <body name="chassis" pos="0 0 0.1">
+      <freejoint name="root"/>
+      
+      <!-- Inertia -->
+      <inertial pos="0 0 0.4" mass="6.0" diaginertia="0.25 0.25 0.05"/>
+
+      <!-- Visuals -->
+      <geom type="capsule" fromto="0 0 0 0 0 0.5" size="0.03" rgba="0.8 0.2 0.2 1"/>
+      <site name="chassis_site" pos="0 0 0" size="0.01"/>
+      <camera name="front_cam" pos="0.1 0 0.45" xyaxes="0 -1 0 0 0 1" fovy="90"/>
+
+      <!-- Left Wheel -->
+      <body name="left_wheel" pos="0 0.25 0">
+        <inertial pos="0 0 0" mass="0.432" diaginertia="0.001 0.001 0.001"/>
+        <joint name="left_wheel_joint" type="hinge" axis="0 1 0" damping="0.05"/>
+        <geom type="cylinder" size="0.1 0.02" euler="90 0 0" material="matwheel" condim="3" friction="1.5 0.005 0.0001"/>
+      </body>
+
+      <!-- Right Wheel -->
+      <body name="right_wheel" pos="0 -0.25 0">
+        <inertial pos="0 0 0" mass="0.432" diaginertia="0.001 0.001 0.001"/>
+        <joint name="right_wheel_joint" type="hinge" axis="0 1 0" damping="0.05"/>
+        <geom type="cylinder" size="0.1 0.02" euler="90 0 0" material="matwheel" condim="3" friction="1.5 0.005 0.0001"/>
+      </body>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <!-- Torque Motors -->
+    <motor name="left_motor" joint="left_wheel_joint" gear="1" ctrllimited="true" ctrlrange="-200 200"/>
+    <motor name="right_motor" joint="right_wheel_joint" gear="1" ctrllimited="true" ctrlrange="-200 200"/>
+  </actuator>
+
+  <sensor>
+    <framepos objtype="site" objname="chassis_site"/>
+    <framequat objtype="site" objname="chassis_site"/>
+    <framelinvel objtype="site" objname="chassis_site"/>
+    <frameangvel objtype="site" objname="chassis_site"/>
+    <jointvel joint="left_wheel_joint"/>
+    <jointvel joint="right_wheel_joint"/>
+  </sensor>
+</mujoco>
