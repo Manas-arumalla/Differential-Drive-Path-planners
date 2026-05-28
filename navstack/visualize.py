@@ -345,8 +345,8 @@ def animate_path_following(env, robot, path: List[Tuple[float, float]],
 
 
 if __name__ == "__main__":
-    from environment import create_demo_environment
-    from robot import DifferentialDriveRobot
+    from navstack.environment import create_demo_environment
+    from navstack.robot import DifferentialDriveRobot
     
     env = create_demo_environment()
     robot = DifferentialDriveRobot(x=5, y=5, theta=0)

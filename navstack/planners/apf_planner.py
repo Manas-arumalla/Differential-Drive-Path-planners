@@ -10,8 +10,6 @@ from typing import List, Tuple, Optional
 import sys
 import os
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 
 class APFPlanner:
     """
@@ -236,8 +234,8 @@ class APFPlanner:
 # ============== Demo ==============
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
-    from environment import create_demo_environment
-    from visualize import plot_environment, plot_start_goal, plot_path
+    from navstack.environment import create_demo_environment
+    from navstack.visualize import plot_environment, plot_start_goal, plot_path
     
     print("=" * 50)
     print("APF Path Planning Demo")

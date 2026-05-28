@@ -9,20 +9,18 @@ import time
 import sys
 import os
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-
-from environment import create_demo_environment, Environment
-from robot import DifferentialDriveRobot
-from visualize import (plot_environment, plot_start_goal, plot_path, 
+from navstack.environment import create_demo_environment, Environment
+from navstack.robot import DifferentialDriveRobot
+from navstack.visualize import (plot_environment, plot_start_goal, plot_path, 
                         animate_path_following, compare_algorithms, ALGORITHM_COLORS)
 
-from planners.astar_planner import AStarPlanner
-from planners.rrt_planner import RRTPlanner
-from planners.rrt_star_planner import RRTStarPlanner
-from planners.pso_planner import PSOPlanner
-from planners.apf_planner import APFPlanner
-from planners.dijkstra_planner import DijkstraPlanner
-from planners.prm_planner import PRMPlanner
+from navstack.planners.astar_planner import AStarPlanner
+from navstack.planners.rrt_planner import RRTPlanner
+from navstack.planners.rrt_star_planner import RRTStarPlanner
+from navstack.planners.pso_planner import PSOPlanner
+from navstack.planners.apf_planner import APFPlanner
+from navstack.planners.dijkstra_planner import DijkstraPlanner
+from navstack.planners.prm_planner import PRMPlanner
 
 
 def calculate_path_length(path):

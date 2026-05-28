@@ -10,13 +10,16 @@ from .pso_planner import PSOPlanner
 from .apf_planner import APFPlanner
 from .dijkstra_planner import DijkstraPlanner
 from .prm_planner import PRMPlanner
+from .semantic_astar import SemanticAStarPlanner, SemanticCostmap
 
 __all__ = [
-    'AStarPlanner', 
-    'RRTPlanner', 
-    'RRTStarPlanner', 
-    'PSOPlanner', 
+    'AStarPlanner',
+    'RRTPlanner',
+    'RRTStarPlanner',
+    'PSOPlanner',
     'APFPlanner',
     'DijkstraPlanner',
-    'PRMPlanner'
+    'PRMPlanner',
+    'SemanticAStarPlanner',
+    'SemanticCostmap',
 ]

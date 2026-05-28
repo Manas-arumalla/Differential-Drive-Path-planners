@@ -10,8 +10,6 @@ from typing import List, Tuple, Optional, Dict
 import sys
 import os
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 
 class RRTStarPlanner:
     """
@@ -247,8 +245,8 @@ class RRTStarPlanner:
 # ============== Demo ==============
 if __name__ == "__main__":
     import matplotlib.pyplot as plt
-    from environment import create_demo_environment
-    from visualize import plot_environment, plot_start_goal, plot_path, plot_tree
+    from navstack.environment import create_demo_environment
+    from navstack.visualize import plot_environment, plot_start_goal, plot_path, plot_tree
     
     print("=" * 50)
     print("RRT* Path Planning Demo")

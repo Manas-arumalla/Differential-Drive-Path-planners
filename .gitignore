@@ -69,8 +69,22 @@ Thumbs.db
 *.gif
 *.mp4
 
+# ...but keep curated portfolio media (GIFs/figures) under media/
+!media/
+!media/*.gif
+!media/*.png
+
 # Portfolio generation script (local only)
 generate_portfolio_images.py
+
+# mkdocs build output
+site/
+
+# Local development notes (not published)
+CLAUDE.md
+
+# Original standalone sub-projects (superseded by the navstack package)
+Mobile Robotics GUi/
 
 # Jupyter
 .ipynb_checkpoints/

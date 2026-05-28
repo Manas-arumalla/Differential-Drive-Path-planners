@@ -1,0 +1,16 @@
+# Core dependencies for the published path-planning library
+# (planners/, environment.py, robot.py, visualize.py, demo_all.py, Trail/)
+#   pip install -r requirements.txt
+numpy>=1.21
+scipy>=1.7
+matplotlib>=3.4
+
+# ---------------------------------------------------------------------------
+# Optional extras for the MuJoCo simulator GUI and the Segway control/RL work
+# (currently separate, untracked subprojects under "Mobile Robotics GUi/").
+# Install these only if you are running those bodies of work:
+#
+#   pip install mujoco glfw PySide6                       # MuJoCo multi-drive GUI
+#   pip install control cvxpy sympy deap                  # Segway optimal control + tuning
+#   pip install gymnasium stable-baselines3 opencv-python # Segway RL + vision
+# ---------------------------------------------------------------------------
