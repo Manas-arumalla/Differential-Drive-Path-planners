@@ -3,6 +3,9 @@
 ![CI](https://github.com/Manas-arumalla/Differential-Drive-Path-planners/actions/workflows/ci.yml/badge.svg)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue.svg)
 
+> [!NOTE]
+> **Early work.** For a broader, tested treatment of these planners and controllers see [ballpark](https://github.com/Manas-arumalla/ballpark) and [segway-control-suite](https://github.com/Manas-arumalla/segway-control-suite).
+
 **navstack** is a mobile-robot navigation and control platform: classical, sampling, optimization, and reactive **path planners**; a **MuJoCo physics simulator** across 6 drive types; trajectory-tracking **controllers** (Pure Pursuit / Stanley / DWA / **MPC**) and **dynamic obstacle avoidance** (Velocity Obstacles / RVO, incl. multi-robot swarms); and a self-balancing **Segway** stack with LQR / MPC / SMC / pole-placement / **RL (PPO)** control, plus LiDAR and vision perception.
 
 ![MuJoCo path following](media/mujoco_drive.gif)
